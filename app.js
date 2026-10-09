@@ -1,4 +1,4 @@
-const API_URL = ''; // Cole aqui a URL /exec do Web App do Apps Script.
+const API_URL = 'https://script.google.com/macros/s/AKfycbxemngF4ASnvsbx6hDrrQKiGIzDAGg2xib7RlYeo_hu3eCi0jNceiRYmS83vuQ1H9Cb/exec';
 const state={sessions:[]}; const $=s=>document.querySelector(s);
 function hex(b){return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function credential(password,salt){const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);const b=await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(salt),iterations:600000,hash:'SHA-256'},k,256);return hex(b)}
